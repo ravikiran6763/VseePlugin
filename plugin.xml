@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+        id="com.example.hello"
+        version="0.7.0"
+        package="com.example.hello" >
+
+  <name>Hello</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/hello.js" target="js/hello.js"/>
+
+  <js-module src="www/hello.js" name="hello">
+
+    <clobbers target="hello" />
+    <param onLoad="true" />
+
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+
+      <feature name="ExampleApplication">
+
+        <param name="android-package" value="com.example.hello.ExampleApplication"/>
+
+      </feature>
+
+
+      <feature name="ExampleApplicationforchat">
+
+        <param name="android-package" value="com.example.hello.ExampleApplicationforchat"/>
+
+      </feature>
+
+
+      <feature name="loginintovsee">
+
+        <param name="android-package" value="com.example.hello.loginintovsee"/>
+
+      </feature>
+
+
+
+      <feature name="logouttovsee">
+
+        <param name="android-package" value="com.example.hello.logouttovsee"/>
+
+      </feature>
+
+
+    </config-file>
+
+      <source-file src="src/android/ExampleApplication.java"  target-dir="src/com/example/hello"/>
+      <source-file src="src/android/ExampleApplicationforchat.java"  target-dir="src/com/example/hello"/>
+      <source-file src="src/android/loginintovsee.java"  target-dir="src/com/example/hello"/>
+
+        <source-file src="src/android/logouttovsee.java"  target-dir="src/com/example/hello"/>
+        <!-- <source-file src="src/android/notificationforchat.java"  target-dir="src/com/example/hello"/> -->
+
+
+
+
+<!-- aar and jar files -->
+ <source-file src="src/android/libs/vsee-kit-0.6.25475.aar" target-dir="libs" framework="true" />
+<source-file src="src/android/libs/vsee-kit-0.6.25475-javadoc.jar" target-dir="libs" />
+
+<!-- Strings and Values Files -->
+
+  <resource-file src="src/android/res/values/vseestrings.xml"  target="res/values/vseestrings.xml" />
+  <resource-file src="src/android/res/values/vseestyles.xml"  target="res/values/vseestyles.xml" />
+
+
+  <!-- Layout and Strings files -->
+  <resource-file src="src/android/res/layout/chatmessage.xml"  target="res/layout/chatmessage.xml" />
+  <resource-file src="src/android/res/layout/main.xml"  target="res/layout/main.xml" />
+  <resource-file src="src/android/res/layout/waitingmessage.xml"  target="res/layout/waitingmessage.xml" />
+
+
+
+  <!-- border files -->
+
+    <resource-file src="src/android/res/drawable/border_gray.xml"  target="res/drawable/border_gray.xml" />
+    <resource-file src="src/android/res/drawable/border.xml"  target="res/drawable/border.xml" />
+
+
+      <resource-file src="src/android/res/drawable/ic_add_white.png"  target="res/drawable/ic_add_white.png" />
+      <resource-file src="src/android/res/drawable/ic_favorite_white.png"  target="res/drawable/ic_favorite_white.png" />
+
+
+<source-file src="src/android/build-extras.gradle" target-dir="." />
+
+
+
+  </platform>
+
+
+    <platform name="ios">
+
+
+      <config-file target="config.xml" parent="/widget">
+
+        <feature name="ExampleApplication">
+          <param name="ios-package" value="ExampleApplication" />
+        </feature>
+
+
+        <feature name="ExampleApplicationforchat">
+          <param name="ios-package" value="ExampleApplicationforchat" />
+        </feature>
+
+
+
+        <feature name="loginintovsee">
+          <param name="ios-package" value="loginintovsee" />
+        </feature>
+
+
+        <feature name="logouttovsee">
+          <param name="ios-package" value="logouttovsee" />
+        </feature>
+
+      </config-file>
+
+
+      <source-file src="src/ios/accpetcordova.swift" />
+      <source-file src="src/ios/fromviewController.swift" />
+      <source-file src="src/ios/calls.swift" />
+      <source-file src="src/ios/waitforcall.swift" />
+
+            <source-file src="src/ios/globals.m" />
+            <source-file src="src/ios/loginintovsee.swift" />
+            <source-file src="src/ios/logoutfromvseeforios.swift" />
+
+            <source-file src="src/ios/ExampleApplicationforchat.swift" />
+
+
+
+        <framework src="src/ios/VSeeKit.framework" custom="true"/>
+        <resource-file src="src/ios/VSeeKit.bundle" custom="true" />
+
+    <resource-file src="src/ios/LaunchScreen.xib" custom="true" />
+    <resource-file src="src/ios/LoginView.xib" custom="true" />
+
+   <resource-file src="src/ios/WaitForCallView.xib" custom="true" />
+
+
+        <framework src="Accelerate.framework" weak="true" />
+        <framework src="AudioToolbox.framework" weak="true" />
+        <framework src="AVFoundation.framework" weak="true" />
+        <framework src="CFNetwork.framework" weak="true" />
+        <framework src="CoreGraphics.framework" weak="true" />
+        <framework src="CoreMedia.framework" weak="true" />
+        <framework src="Foundation.framework" weak="true" />
+        <framework src="Security.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="UIKit.framework" weak="true" />
+        <framework src="libresolv.dylib" weak="true" />
+        <framework src="libz.dylib" weak="true" />
+
+
+
+    </platform>
+
+
+
+</plugin>
